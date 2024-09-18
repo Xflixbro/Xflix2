@@ -1,39 +1,105 @@
 from pyrogram import __version__
 from bot import Bot
-from config import OWNER_ID
+from config import *
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-
-
+from database.database import add_user, del_user, full_userbase, present_user
 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
-    data = query.data
+    data = query.data 
     if data == "about":
         await query.message.edit_text(
-            text = f"<b>○ ᴏᴡɴᴇʀ : <a href='tg://user?id={OWNER_ID}'>ᴛʜɪꜱ ᴘᴇʀꜱᴏɴ</a>\n○ ᴍʏ ᴜᴘᴅᴀᴛᴇs : <a href='https://t.me/Xeonflix'>xᴇᴏɴғʟɪx</a>\n○ ᴍᴏᴠɪᴇs ᴜᴘᴅᴀᴛᴇs : <a href='https://t.me/xeonflixmovies'>ᴛᴇᴀᴍ xᴇᴏɴғʟɪx</a>\n○ ᴏᴜʀ ᴄᴏᴍᴍᴜɴɪᴛʏ : <a href='https://t.me/TeamXeon'>xᴇᴏɴғʟɪx ɴᴇᴛᴡᴏʀᴋ</a>\n○ ᴀɴɪᴍᴇ  : <a href='https://t.me/Anime_Xeon'>ᴡᴇᴇʙ ᴢᴏɴᴇ</a></b>",
-            disable_web_page_preview = True,
-            reply_markup = InlineKeyboardMarkup(
-                [
+            text=f"""<b><blockquote>╭───────────⍟
+├➤ ᴄʀᴇᴀᴛᴏʀ  : <a href='t.me/{OWNER_USER}'>ᴛʜɪs ᴘᴇʀsᴏɴ</a>
+├➤ ʟɪʙʀᴀʀy : <a href=https://github.com/pyrogram>ᴘʏʀᴏɢʀᴀᴍ</a>
+├➤ ʟᴀɴɢᴜᴀɢᴇ : <a href=https://www.python.org>ᴘʏᴛʜᴏɴ 3</a>
+├➤ ᴍʏ ᴜᴘᴅᴀᴛᴇs : <a href=https://t.me/outlawbots>ᴏᴜᴛʟᴀᴡ ʙᴏᴛs</a>
+├➤ ᴘᴀɪᴅ ʙᴏᴛ : <a href=https://t.me/ifeelscam>ᯓ ɪɴᴠᴀʟɪᴅ ᡣ𐭩</a>
+├➤ ᴅᴇᴠʟᴏᴘᴇʀ : <a href=https://t.me/HateXfree>ᯓ ʜᴀᴛᴇ ғʀᴇᴇ ᡣ𐭩</a>
+╰───────────────⍟</blockquote></b>""",
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [ [ InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", callback_data ="source"),
+                  InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ" , callback_data = "main")],
+                 [InlineKeyboardButton("ᴡᴀᴛᴄʜ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url = "https://t.me/UnseenRobot/shorts")],
                     [
-                    InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data = "close"),
-                    InlineKeyboardButton('ᴘʀᴇᴍɪᴜᴍ ᴄʜᴀɴɴᴇʟ', url='https://t.me/XFlix_Store')
+                        InlineKeyboardButton("ʜᴏᴍᴇ", callback_data = "start"),
+                        InlineKeyboardButton(" ᴄʟᴏsᴇ ", callback_data = "close")
                     ]
                 ]
             )
         )
+    elif data == "start":
+        await query.message.edit_text(
+            text=START_MSG.format(first=query.from_user.first_name),
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [ InlineKeyboardButton(text="🏖️", callback_data="about"),
+                    InlineKeyboardButton(text="🍂", callback_data="about"),
+                    InlineKeyboardButton(text="⚠️", callback_data="me"),
+                    InlineKeyboardButton(text="💸", callback_data="about"),
+                    InlineKeyboardButton(text="🎭", callback_data="about"),
+                ],[ InlineKeyboardButton( "ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", callback_data = "main" ),
+                    InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ", callback_data = "source")
+                ], [ InlineKeyboardButton("ᴡᴀᴛᴄʜ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url = "http://t.me/UnseenRobot/shorts") ],
+                [
+                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data = "help"),
+                    InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about")
+                ]
+            ]
+            )
+        )
+    
     elif data == "close":
         await query.message.delete()
         try:
             await query.message.reply_to_message.delete()
         except:
             pass
-
-
-
-
-
-# Jishu Developer 
-# Don't Remove Credit 🥺
-# Telegram Channel @Madflix_Bots
-# Backup Channel @JishuBotz
-# Developer @JishuDeveloper
+      
+    elif data == "main":
+        await query.message.edit_text(
+            text=f"<blockquote>ʜᴇʟʟᴏ ᴍʏ ᴜsᴇʀs ᴍʏ ᴜᴘᴅᴀᴛᴇ & ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ɪs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ.</blockquote>",
+            disable_web_page_preview=True,
+            reply_markup = InlineKeyboardMarkup(
+                [   
+                    [
+                        InlineKeyboardButton("ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/Outlawbots"),
+                        InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ",url = "t.me/outlawbots")
+                    ],
+                    [   InlineKeyboardButton("ʜᴏᴍᴇ ", callback_data = "start"), 
+                        InlineKeyboardButton("ᴄʟᴏsᴇ ", callback_data = "close")
+                    ]
+                ]
+            )
+        )
+    elif data == "me":
+            await query.message.edit(
+                text=f"<b>ᴛʜɪs sᴇᴄᴛɪᴏɴ ɪs ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴʟʏ ғᴏʀ ᴀᴅᴍɪɴs & ᴅᴇᴠᴇʟᴏᴘᴇʀ</b>",
+                disable_web_page_preview=True,
+                reply_markup = InlineKeyboardMarkup(
+                    [
+                        [  InlineKeyboardButton("ᴅᴇᴠʟᴏᴘᴇʀ",url= "t.me/HateXfree"),
+                         InlineKeyboardButton("ᴀᴅᴍɪɴ",url = "t.me/CallAdminsRobot")],
+                        [ InlineKeyboardButton("ʜᴏᴍᴇ", callback_data = "start"),
+                         InlineKeyboardButton( "ᴄʟᴏsᴇ", callback_data = "close")]
+                    ]
+                )
+        )
+    elif data == "source":
+        await query.message.edit_text(
+            text=f"<b><blockquote>ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs ᴀᴠᴀɪʟᴀʙʟᴇ\nɪɴ ᴛᴡᴏ ᴡᴀʏs\n★ <a herf='https://publicearn.com/GitHub'>ɢɪᴛʜᴜʙ</a> \n★ <a herf='https://t.me/+Yy9O2e_eJwU3NjRl'>ᴢɪᴘ ғɪʟᴇ </a></blockquote></b>",
+            disable_web_page_preview=True,
+            reply_markup = InlineKeyboardMarkup(
+                [   
+                    [
+                        InlineKeyboardButton("ɢɪᴛʜᴜʙ ", url="https://publicearn.com/GitHub"),
+                        InlineKeyboardButton("ᴢɪᴘ ғɪʟᴇ",url="https://t.me/+Yy9O2e_eJwU3NjRl")
+                    ],
+                    [   InlineKeyboardButton("ʜᴏᴍᴇ" , callback_data = "start"),
+                        InlineKeyboardButton(" ᴄʟᴏsᴇ", callback_data = "close")
+                    ]
+                ]
+            )
+        )
