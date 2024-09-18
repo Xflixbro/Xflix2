@@ -65,6 +65,8 @@ START_MSG = os.environ.get("START_MESSAGE", "Hello {mention}\n\nI Can Store Priv
 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {mention}\n\n<b>You Need To Join In My Channel/Group To Use Me\n\nKindly Please Join Channel</b>")
 
+START_PIC = os.environ.get("START_PIC", "https://graph.org/file/52cd697e31b12fe66c184.jpg")
+
 
 
 
