@@ -104,18 +104,23 @@ async def start_command(client: Client, message: Message):
         return
     else:
         reply_markup = InlineKeyboardMarkup(
-            [
                 [
-                    InlineKeyboardButton("ᴀʙᴏᴜᴛ ᴍᴇ", callback_data = "about"),
-                    InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data = "close")
+                    [ InlineKeyboardButton(text="🏖️", callback_data="about"),
+                    InlineKeyboardButton(text="🍂", callback_data="about"),
+                    InlineKeyboardButton(text="⚠️", callback_data="me"),
+                    InlineKeyboardButton(text="💸", callback_data="about"),
+                    InlineKeyboardButton(text="🎭", callback_data="about"),
+                ],[ InlineKeyboardButton( "ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", callback_data = "main" ),
+                    InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ", callback_data = "source")
+                ], [ InlineKeyboardButton("ᴡᴀᴛᴄʜ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url = "http://t.me/UnseenRobot/shorts") ],
+                [
+                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data = "help"),
+                    InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about")
                 ]
             ]
         )
-        # Add image URL for the start message
-        img_url = "https://telegra.ph/file/7de5ca78e3963506bddfd.jpg"
-
         await message.reply_photo(
-            photo=IMG_URL,
+            photo= START_PIC,
             caption= START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
