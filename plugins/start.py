@@ -112,6 +112,7 @@ async def start_command(client: Client, message: Message):
             ]
         )
         # Add image URL for the start message
+        img_url = "https://telegra.ph/file/7de5ca78e3963506bddfd.jpg"
 
         await message.reply_photo(
             photo=IMG_URL,
