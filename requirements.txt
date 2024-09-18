@@ -4,5 +4,6 @@ pyromod
 pymongo
 dnspython
 aiohttp
+libgl1-mesa-glx
 
 humanize
