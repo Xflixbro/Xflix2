@@ -97,7 +97,7 @@ class Bot(Client):
 
         self.set_parse_mode(ParseMode.HTML)
         self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated By \nhttps://t.me/Madflix_Bots")
-        self.LOGGER(__name__).info(f"""ミ💖 MADFLIX BOTZ 💖彡""")
+        self.LOGGER(__name__).info(f"""ミ💖 XEONFLIX BOTZ 💖彡""")
         self.username = usr_bot_me.username
         #web-response
         app = web.AppRunner(await web_server())
