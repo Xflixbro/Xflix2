@@ -103,22 +103,21 @@ async def start_command(client: Client, message: Message):
 
         return
     else:
-        reply_markup = InlineKeyboardMarkup(
-                [
-                    [ InlineKeyboardButton(text="🏖️", callback_data="about"),
-                    InlineKeyboardButton(text="🍂", callback_data="about"),
-                    InlineKeyboardButton(text="⚠️", callback_data="me"),
-                    InlineKeyboardButton(text="💸", callback_data="about"),
-                    InlineKeyboardButton(text="🎭", callback_data="about"),
-                ],[ InlineKeyboardButton( "ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", callback_data = "main" ),
-                    InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ", callback_data = "source")
-                ], [ InlineKeyboardButton("ᴡᴀᴛᴄʜ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url = "http://t.me/UnseenRobot/shorts") ],
-                [
-                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data = "help"),
-                    InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about")
-                ]
-            ]
-        )
+        reply_markup = InlineKeyboardMarkup[[
+            InlineKeyboardButton(text="🏡", callback_data="start"),
+            InlineKeyboardButton(text="🛡", callback_data="group_info"),
+            InlineKeyboardButton(text="💳", callback_data="about"),
+            InlineKeyboardButton(text="💸", callback_data="shortlink_info"),
+            InlineKeyboardButton(text="🖥", callback_data="main"),
+        ],[
+            InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+        ],[
+            InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='main'),
+            InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ •', callback_data='shortlink_info')
+        ],[
+            InlineKeyboardButton('• ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium_info'),
+            InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
+            ]]
         await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
