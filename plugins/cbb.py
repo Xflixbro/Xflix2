@@ -16,7 +16,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 [
                     [
                     InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data = "close"),
-                    InlineKeyboardButton('ᴘʀᴇᴍɪᴜᴍ ᴄʜᴀɴɴᴇʟ', url='https://t.me/XFlix_Store')
+                    InlineKeyboardButton('ʙᴜy ᴘʀᴇᴍɪᴜᴍ', url='https://t.me/XFlix_Store')
                     ]
                 ]
             )
