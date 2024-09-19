@@ -1,7 +1,8 @@
-git+https://github.com/KurimuzonAkuma/pyrogram
+pyrogram
 TgCrypto
-pyromod==1.5
+pyromod
 pymongo
 dnspython
+aiohttp
 
 humanize
