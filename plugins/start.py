@@ -4,7 +4,7 @@ from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, IMG_URL, FILE_AUTO_DELETE
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FILE_AUTO_DELETE
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 
@@ -111,12 +111,24 @@ async def start_command(client: Client, message: Message):
                 ]
             ]
         )
-        
-        # Add image URL for the start message
-
-        await message.reply_photo(
-            photo=IMG_URL,
-            caption= START_MSG.format(
+        reply_markup = InlineKeyboardMarkup(
+                [
+                    [ InlineKeyboardButton(text="🏖️", callback_data="about"),
+                    InlineKeyboardButton(text="🍂", callback_data="about"),
+                    InlineKeyboardButton(text="⚠️", callback_data="me"),
+                    InlineKeyboardButton(text="💸", callback_data="about"),
+                    InlineKeyboardButton(text="🎭", callback_data="about"),
+                ],[ InlineKeyboardButton( "ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", callback_data = "main" ),
+                    InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ", callback_data = "source")
+                ], [ InlineKeyboardButton("ᴡᴀᴛᴄʜ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url = "http://t.me/UnseenRobot/shorts") ],
+                [
+                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data = "help"),
+                    InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about")
+                ]
+            ]
+        )
+        await message.reply_text(
+            text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
@@ -124,16 +136,10 @@ async def start_command(client: Client, message: Message):
                 id = message.from_user.id
             ),
             reply_markup = reply_markup,
-            quote = True
+            
         )
         return
 
-    
-
-
-
-    
-    
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
