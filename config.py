@@ -53,6 +53,9 @@ DISABLE_CHANNEL_BUTTON = True if os.environ.get('DISABLE_CHANNEL_BUTTON', "True"
 
 BOT_STATS_TEXT = "<b>BOT UPTIME :</b>\n{uptime}"
 
+IMG_URL = os.environ.get("IMG_URL", "https://telegra.ph/file/7de5ca78e3963506bddfd.jpg")
+                             
+
 
 
 
