@@ -12,12 +12,12 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "about":
         await query.message.edit_text(
             text=f"""<b><blockquote>╭───────────⍟
-├➤ ᴄʀᴇᴀᴛᴏʀ  : <a href=https://github.com/xeon>ᴘʏʀᴏɢʀᴀᴍ
+├➤ ᴄʀᴇᴀᴛᴏʀ  : <a href=https://github.com/xeon>ᴍʀ xᴇᴏɴ</a>
 ├➤ ʟɪʙʀᴀʀy : <a href=https://github.com/pyrogram>ᴘʏʀᴏɢʀᴀᴍ</a>
 ├➤ ʟᴀɴɢᴜᴀɢᴇ : <a href=https://www.python.org>ᴘʏᴛʜᴏɴ 3</a>
-├➤ ᴍʏ ᴜᴘᴅᴀᴛᴇs : <a href=https://t.me/outlawbots>ᴏᴜᴛʟᴀᴡ ʙᴏᴛs</a>
-├➤ ᴘᴀɪᴅ ʙᴏᴛ : <a href=https://t.me/ifeelscam>ᯓ ɪɴᴠᴀʟɪᴅ ᡣ𐭩</a>
-├➤ ᴅᴇᴠʟᴏᴘᴇʀ : <a href=https://t.me/HateXfree>ᯓ ʜᴀᴛᴇ ғʀᴇᴇ ᡣ𐭩</a>
+├➤ ᴍʏ ᴜᴘᴅᴀᴛᴇs : <a href=https://t.me/XflixAdult>xᴇᴏɴ ʙᴏᴛs</a>
+├➤ ᴘᴀɪᴅ ʙᴏᴛ : <a href=https://t.me/xeonflix>ᯓ ɪɴᴠᴀʟɪᴅ ᡣ𐭩</a>
+├➤ ᴅᴇᴠʟᴏᴘᴇʀ : <a href=https://t.me/xeonflixmovies>ᯓ ʜᴀᴛᴇ ғʀᴇᴇ ᡣ𐭩</a>
 ╰───────────────⍟</blockquote></b>""",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -46,7 +46,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                     InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ", callback_data = "source")
                 ], [ InlineKeyboardButton("ᴡᴀᴛᴄʜ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url = "http://t.me/UnseenRobot/shorts") ],
                 [
-                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data = "help"),
+                    InlineKeyboardButton("close", callback_data = "close"),
                     InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about")
                 ]
             ]
@@ -67,8 +67,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(
                 [   
                     [
-                        InlineKeyboardButton("ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/Outlawbots"),
-                        InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ",url = "t.me/outlawbots")
+                        InlineKeyboardButton("ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ", url="https://t.me/XfliAdult"),
+                        InlineKeyboardButton("Buy Premium",url = "t.me/outlawbots")
                     ],
                     [   InlineKeyboardButton("ʜᴏᴍᴇ ", callback_data = "start"), 
                         InlineKeyboardButton("ᴄʟᴏsᴇ ", callback_data = "close")
@@ -82,8 +82,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 disable_web_page_preview=True,
                 reply_markup = InlineKeyboardMarkup(
                     [
-                        [  InlineKeyboardButton("ᴅᴇᴠʟᴏᴘᴇʀ",url= "t.me/HateXfree"),
-                         InlineKeyboardButton("ᴀᴅᴍɪɴ",url = "t.me/CallAdminsRobot")],
+                        [  InlineKeyboardButton("ᴅᴇᴠʟᴏᴘᴇʀ",url= "t.me/MrXeonTG"),
+                         InlineKeyboardButton("ᴀᴅᴍɪɴ",url = "t.me/Xeonflix")],
                         [ InlineKeyboardButton("ʜᴏᴍᴇ", callback_data = "start"),
                          InlineKeyboardButton( "ᴄʟᴏsᴇ", callback_data = "close")]
                     ]
@@ -97,7 +97,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 [   
                     [
                         InlineKeyboardButton("ɢɪᴛʜᴜʙ ", url="https://publicearn.com/GitHub"),
-                        InlineKeyboardButton("ᴢɪᴘ ғɪʟᴇ",url="https://t.me/+Yy9O2e_eJwU3NjRl")
+                        InlineKeyboardButton("ᴢɪᴘ ғɪʟᴇ",url="https://t.me/+y6mFtiS5JQFkNThl")
                     ],
                     [   InlineKeyboardButton("ʜᴏᴍᴇ" , callback_data = "start"),
                         InlineKeyboardButton(" ᴄʟᴏsᴇ", callback_data = "close")
