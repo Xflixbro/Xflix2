@@ -89,7 +89,7 @@ async def start_command(client: Client, message: Message):
                     InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ", callback_data = "source")
                 ], [ InlineKeyboardButton("ᴡᴀᴛᴄʜ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url = "http://t.me/UnseenRobot/shorts") ],
                 [
-                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data = "help"),
+                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data = "close"),
                     InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about")
                 ]
             ]
@@ -122,12 +122,12 @@ REPLY_ERROR = "<code>Use this command as a reply to any telegram message without
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="Join Channel 1", url=client.invitelink),
-            InlineKeyboardButton(text="Join Channel 2", url=client.invitelink2),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
         ],
         [
-            InlineKeyboardButton(text="Join Channel 3", url=client.invitelink3),
-            InlineKeyboardButton(text="Join Channel 4", url=client.invitelink4),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
         ]
     ]
     try:
