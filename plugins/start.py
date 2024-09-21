@@ -122,7 +122,7 @@ async def start_command(client: Client, message: Message):
                     InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ", callback_data = "source")
                 ], [ InlineKeyboardButton("ᴡᴀᴛᴄʜ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url = "http://t.me/UnseenRobot/shorts") ],
                 [
-                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data = "help"),
+                    InlineKeyboardButton("Close", callback_data = "close"),
                     InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about")
                 ]
             ]
