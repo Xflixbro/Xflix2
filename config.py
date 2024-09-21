@@ -71,12 +71,12 @@ FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {mention}\n\n<b>You Need 
 START_PIC = os.environ.get("START_PIC", "https://graph.org/file/52cd697e31b12fe66c184.jpg")
 
 ABOUT_TXT = f"""<b><blockquote>╭───────────⍟
-├➤ ᴄʀᴇᴀᴛᴏʀ  : <a href=https://github.com/xeon>ᴘʏʀᴏɢʀᴀᴍ
+├➤ ᴄʀᴇᴀᴛᴏʀ  : <a href=https://github.com/xeon>ᴍʀ xᴇᴏɴ</a>
 ├➤ ʟɪʙʀᴀʀy : <a href=https://github.com/pyrogram>ᴘʏʀᴏɢʀᴀᴍ</a>
 ├➤ ʟᴀɴɢᴜᴀɢᴇ : <a href=https://www.python.org>ᴘʏᴛʜᴏɴ 3</a>
-├➤ ᴍʏ ᴜᴘᴅᴀᴛᴇs : <a href=https://t.me/outlawbots>ᴏᴜᴛʟᴀᴡ ʙᴏᴛs</a>
-├➤ ᴘᴀɪᴅ ʙᴏᴛ : <a href=https://t.me/ifeelscam>ᯓ ɪɴᴠᴀʟɪᴅ ᡣ𐭩</a>
-├➤ ᴅᴇᴠʟᴏᴘᴇʀ : <a href=https://t.me/HateXfree>ᯓ ʜᴀᴛᴇ ғʀᴇᴇ ᡣ𐭩</a>
+├➤ ᴍʏ ᴜᴘᴅᴀᴛᴇs : <a href=https://t.me/XflixAdult>xᴇᴏɴ ʙᴏᴛs</a>
+├➤ ᴘᴀɪᴅ ʙᴏᴛ : <a href=https://t.me/xeonflix>ᯓ ɪɴᴠᴀʟɪᴅ ᡣ𐭩</a>
+├➤ ᴅᴇᴠʟᴏᴘᴇʀ : <a href=https://t.me/xeonflixmovies>ᯓ ʜᴀᴛᴇ ғʀᴇᴇ ᡣ𐭩</a>
 ╰───────────────⍟</blockquote></b>"""
 
 
